@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Warehouse Operator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background: #f4f4f4; }
+    input { padding: 12px; font-size: 18px; width: 220px; margin: 8px; border-radius: 8px; }
+    .btn-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 20px 0; }
+    button {
+      padding: 14px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      min-width: 165px;
+    }
+    .time-btn { background: #2196F3; color: white; }
+    .break-btn { background: #FF9800; color: white; }
+    .task-btn { background: #4CAF50; color: white; }
+    .out-btn { background: #F44336; color: white; }
+    #msg { font-weight: bold; min-height: 28px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h2>Forklift Operator Terminal</h2>
+  
+  <input id="emp" placeholder="Employee ID" autofocus />
+  <input id="empName" placeholder="Employee Name (optional)" />
+  
+  <div class="btn-group">
+    <button class="time-btn" onclick="logEvent('Time In')">⏰ Time IN</button>
+    <button class="break-btn" onclick="logEvent('1st Break')">☕ 1st Break</button>
+    <button class="break-btn" onclick="logEvent('2nd Break')">☕ 2nd Break</button>
+    <button class="out-btn" onclick="logEvent('Time Out')">🔴 Time OUT</button>
+  </div>
+
+  <h3>Current Task</h3>
+  <div class="btn-group">
+    <button class="task-btn" onclick="logEvent('Loading')">Loading</button>
+    <button class="task-btn" onclick="logEvent('Offloading')">Offloading</button>
+    <button class="task-btn" onclick="logEvent('Putaway')">Putaway</button>
+    <button class="task-btn" onclick="logEvent('Case Picking')">Case Picking</button>
+    <button class="task-btn" onclick="logEvent('Pallet Picking')">Pallet Picking</button>
+    <button class="task-btn" onclick="logEvent('Rewarehousing')">Rewarehousing</button>
+    <button class="task-btn" onclick="logEvent('Housekeeping')">Housekeeping</button>
+  </div>
+
+  <p id="msg"></p>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
